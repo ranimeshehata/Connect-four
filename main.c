@@ -10,9 +10,7 @@
    char name;
    int score;
    int moves;
-
 }play;*/
-
 
 void player1(int row,int column,char a[1+row][1+column],int turn,play play1,play play2,int undoarr[row][column])
   {
@@ -269,11 +267,6 @@ void undo(int row,int column,char a[row+1][column+1],int turn,play play1,play pl
     }
 
 }
-
-
-
-
-
 
 void printboard(int row,int column,char a[1+row][1+column],int turn,int sent,play play1,play play2,int undoarr[row][column])
     {
