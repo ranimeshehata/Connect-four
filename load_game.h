@@ -40,6 +40,18 @@ void load_game(char a[row+1][column+1],int undoarr[row][column],int redoarr[row]
     {
         FILE*fp1;
         fp1=fopen("game1.bin","rb");
+        if(fp1==NULL)
+            {
+                printf("There is no game to be loaded!!\n");
+               int z;
+               printf("Press 1 to return to main menu.\nPress any other button to start a new game.\n");
+               scanf("%d",&z);
+               if(z==1)
+                menuu(1);
+               else
+                return;
+            }
+        else{
         row=fgetc(fp1);
         column=fgetc(fp1);
         for(i=0;i<row+1;i++)
@@ -60,11 +72,24 @@ void load_game(char a[row+1][column+1],int undoarr[row][column],int redoarr[row]
             }
         }
         fclose(fp1);
-    }
+    }}
  else if(file_no==2)      // when choosing File 2
     {
         FILE*fp2;
         fp2=fopen("game2.bin","rb");
+        if(fp2==NULL)
+            {
+                printf("There is no game to be loaded!!\n");
+               int z;
+               printf("Press 1 to return to main menu.\nPress any other button to start a new game.\n");
+               scanf("%d",&z);
+               if(z==1)
+                menuu(1);
+               else
+                return;
+            }
+
+        else{
         row=fgetc(fp2);
         column=fgetc(fp2);
         for(i=0;i<row+1;i++)
@@ -83,11 +108,23 @@ void load_game(char a[row+1][column+1],int undoarr[row][column],int redoarr[row]
             }
         }
         fclose(fp2);
-    }
+    }}
      else        // when choosing File 3
     {
         FILE*fp3;
         fp3=fopen("game3.bin","rb");
+        if(fp3==NULL)
+           {
+               printf("There is no game to be loaded!!\n");
+               int z;
+               printf("Press 1 to return to main menu.\nPress any other button to start a new game.\n");
+               scanf("%d",&z);
+               if(z==1)
+                menuu(1);
+               else
+                return;
+           }
+        else {
         row=fgetc(fp3);
         column=fgetc(fp3);
         for(i=0;i<row+1;i++)
@@ -107,7 +144,6 @@ void load_game(char a[row+1][column+1],int undoarr[row][column],int redoarr[row]
         }
         fclose(fp3);
     }
-}
-
+}}
 
 #endif // LOAD_GAME_H_INCLUDED
